@@ -3,7 +3,7 @@ description: "Drive api definition in Gravitee's API Management tool from settin
 author: "Guillaume Gillon"
 branding:
   icon: "layers"
-  color: "#86c3d0"
+  color: "blue"
 inputs:
   command:
     description: 'api definition command'

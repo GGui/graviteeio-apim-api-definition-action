@@ -54,7 +54,7 @@ jobs:
         name: "checkout"
       - name: gio apim apis diff
         id: gio_apim_apis_diff
-        uses: GGui/graviteeio-apim-api-definition-action@v1-beta
+        uses: GGui/graviteeio-apim-api-definition-action@v1.0b01
         env:
           GIO_TOKEN: ${{ secrets.GIO_TOKEN }}
           GIO_APIM_URL: ${{ secrets.GIO_APIM_URL }}
@@ -64,7 +64,7 @@ jobs:
             gio_workspaces: "gio"
       - name: gio apim apis apply
         id: gio_apim_apis_apply
-        uses: GGui/graviteeio-apim-api-definition-action@v1-beta
+        uses: GGui/graviteeio-apim-api-definition-action@v1.0b01
         env:
           GIO_TOKEN: ${{ secrets.GIO_TOKEN }}
           GIO_APIM_URL: ${{ secrets.GIO_APIM_URL }}
