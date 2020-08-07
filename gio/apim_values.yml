@@ -1,0 +1,10 @@
+version: "1.0"
+name: My api CLI with action
+description: api generated with gio cli
+context_path: /test
+endpoints:
+   - https://api.gravitee.io/echo
+plans:
+   - name: Plan keyless
+     description: plan keyless
+     security: key_less

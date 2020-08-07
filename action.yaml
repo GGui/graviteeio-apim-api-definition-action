@@ -1,0 +1,30 @@
+name: "Gravitee.io - APIM - Drive api definition settings"
+description: "Drive api definition in Gravitee's API Management tool from setting files"
+author: "Guillaume Gillon"
+branding:
+  icon: "layers"
+  color: "#86c3d0"
+inputs:
+  command:
+    description: 'api definition command'
+    required: true
+    default: 'diff'
+  api:
+    description: 'api id'
+    required: true
+  gio_workspaces:
+    description: 'api definition files'
+    required: false
+    default: 'gio'
+  options:
+    description: 'Option parameters for command'
+    required: false
+
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  args:
+    - ${{ inputs.command }}
+    - ${{ inputs.api }}
+    - ${{ inputs.gio_workspaces }}
+    - ${{ inputs.options }}

@@ -1,0 +1,34 @@
+on: [push]
+
+jobs:
+  gio_job:
+    runs-on: ubuntu-latest
+    name: job gio
+    steps:
+      - uses: actions/checkout@v2
+        name: "checkout"
+      - name: gio verion
+        id: gio_version
+        uses: ./
+        with:
+          command: "version"
+      - name: gio apim apis diff
+        id: gio_apim_apis_diff
+        uses: ./
+        env:
+          GIO_APIM_TOKEN: ${{ secrets.GIO_APIM_TOKEN }}
+          GIO_APIM_URL: ${{ secrets.GIO_APIM_URL }}
+        with:
+            command: "diff"
+            api: ${{ secrets.GIO_API_ID }}
+            gio_workspaces: "gio"
+      - name: gio apim apis apply
+        id: gio_apim_apis_apply
+        uses: ./
+        env:
+          GIO_APIM_TOKEN: ${{ secrets.GIO_APIM_TOKEN }}
+          GIO_APIM_URL: ${{ secrets.GIO_APIM_URL }}
+        with:
+            command: "apply"
+            api: ${{ secrets.GIO_API_ID }}
+            gio_workspaces: "gio"
