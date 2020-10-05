@@ -16,8 +16,8 @@ fi
 case $cmd in
      "version") gio --version;;
      "diff"|"apply") 
-        echo "Executing: gio apim apis definition $cmd --api=${api} $options --config-path=${dir}/$workspace"
-        gio apim apis definition $cmd --api=$api $ops --config-path=$workspace
+        echo "Executing: gio apim apis definition $cmd --api=${api} $options --def-path=${dir}/$workspace"
+        gio apim apis definition $cmd --api=$api $ops --def-path=$workspace
         ;;
      * ) echo "gio $cmd is not supported." && exit 1 ;;
 esac

@@ -1,4 +1,4 @@
-FROM graviteeio/cli:1.0
+FROM graviteeio/cli:0.1
  
 COPY entrypoint.sh /entrypoint.sh
  
