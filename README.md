@@ -42,6 +42,8 @@ options | Option parameters for command |
 
 ## Example usage
 
+For api management below verion 3.x, remove environment variable GIO_APIM_ORG and GIO_APIM_ENV
+
 ```yaml
 on: [push]
 
@@ -54,20 +56,24 @@ jobs:
         name: "checkout"
       - name: gio apim apis diff
         id: gio_apim_apis_diff
-        uses: GGui/graviteeio-apim-api-definition-action@v1.0b01
+        uses: GGui/graviteeio-apim-api-definition-action@v0.1
         env:
           GIO_TOKEN: ${{ secrets.GIO_TOKEN }}
           GIO_APIM_URL: ${{ secrets.GIO_APIM_URL }}
+          GIO_APIM_ORG: DEFAULT
+          GIO_APIM_ENV: DEFAULT
         with:
             command: "diff"
             api: ${{ secrets.GIO_API_ID }}
             gio_workspaces: "gio"
       - name: gio apim apis apply
         id: gio_apim_apis_apply
-        uses: GGui/graviteeio-apim-api-definition-action@v1.0b01
+        uses: GGui/graviteeio-apim-api-definition-action@v0.1
         env:
           GIO_TOKEN: ${{ secrets.GIO_TOKEN }}
           GIO_APIM_URL: ${{ secrets.GIO_APIM_URL }}
+          GIO_APIM_ORG: DEFAULT
+          GIO_APIM_ENV: DEFAULT
         with:
             command: "apply"
             api: ${{ secrets.GIO_API_ID }}
