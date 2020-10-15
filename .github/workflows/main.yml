@@ -18,6 +18,8 @@ jobs:
         env:
           GIO_APIM_TOKEN: ${{ secrets.GIO_APIM_TOKEN }}
           GIO_APIM_URL: ${{ secrets.GIO_APIM_URL }}
+          GIO_APIM_ORG: DEFAULT
+          GIO_APIM_ENV: DEFAULT
         with:
             command: "diff"
             api: ${{ secrets.GIO_API_ID }}
@@ -28,6 +30,8 @@ jobs:
         env:
           GIO_APIM_TOKEN: ${{ secrets.GIO_APIM_TOKEN }}
           GIO_APIM_URL: ${{ secrets.GIO_APIM_URL }}
+          GIO_APIM_ORG: DEFAULT
+          GIO_APIM_ENV: DEFAULT
         with:
             command: "apply"
             api: ${{ secrets.GIO_API_ID }}
