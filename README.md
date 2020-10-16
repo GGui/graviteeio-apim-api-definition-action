@@ -40,6 +40,14 @@ options | Option parameters for command |
 --with-deploy       Deploy api after applying
 ```
 
+## Environment variables 
+| variable | Description |
+| --- | --- |
+`GIO_TOKEN` | Personnal acces token Api Management gravitee
+`GIO_APIM_URL` | Api Management URL.
+`GIO_APIM_ORG` | Organisation. Add `GIO_APIM_ORG: DEFAULT` only higher version 3.x.
+`GIO_APIM_ENV` | Environment. Add `GIO_APIM_ENV: DEFAULT` only higher version 3.x.
+
 ## Example usage
 
 For api management below verion 3.x, remove environment variable GIO_APIM_ORG and GIO_APIM_ENV
